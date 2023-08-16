@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#ffffff" />
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <corners android:radius="50dp" />
-    <size
-        android:width="96dp"
-        android:height="96dp" />
-</shape>
+    <!-- Draw the full circle -->
+    <item>
+        <shape android:shape="oval">
+            <size
+                android:width="96dp"
+                android:height="96dp"/>
+            <solid android:color="#FF0000"/> <!-- Circle color -->
+        </shape>
+    </item>
+
+    <!-- Overlay a rectangle on the left side to "remove" 16dp -->
+    <item android:right="80dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF"/> <!-- This should match the background color -->
+        </shape>
+    </item>
+
+    <!-- Overlay a rectangle on the right side to "remove" 16dp -->
+    <item android:left="80dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF"/> <!-- This should match the background color -->
+        </shape>
+    </item>
+
+</layer-list>
